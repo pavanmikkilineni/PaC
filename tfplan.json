@@ -1,0 +1,394 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.9.8",
+    "planned_values": {
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_s3_bucket.my_bucket",
+                    "mode": "managed",
+                    "type": "aws_s3_bucket",
+                    "name": "my_bucket",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "acl": "public-read",
+                        "bucket": "my-public-bucket",
+                        "force_destroy": false,
+                        "lifecycle_rule": [
+                            {
+                                "abort_incomplete_multipart_upload_days": null,
+                                "enabled": false,
+                                "expiration": [],
+                                "id": "archive",
+                                "noncurrent_version_expiration": [],
+                                "noncurrent_version_transition": [],
+                                "prefix": null,
+                                "tags": null,
+                                "transition": [
+                                    {
+                                        "date": "",
+                                        "days": 30,
+                                        "storage_class": "STANDARD_IA"
+                                    },
+                                    {
+                                        "date": "",
+                                        "days": 60,
+                                        "storage_class": "GLACIER"
+                                    }
+                                ]
+                            }
+                        ],
+                        "logging": [
+                            {
+                                "target_bucket": "my-unique-log-bucket",
+                                "target_prefix": "log/"
+                            }
+                        ],
+                        "tags": null,
+                        "timeouts": null,
+                        "versioning": [
+                            {
+                                "enabled": true,
+                                "mfa_delete": false
+                            }
+                        ]
+                    },
+                    "sensitive_values": {
+                        "cors_rule": [],
+                        "grant": [],
+                        "lifecycle_rule": [
+                            {
+                                "expiration": [],
+                                "noncurrent_version_expiration": [],
+                                "noncurrent_version_transition": [],
+                                "transition": [
+                                    {},
+                                    {}
+                                ]
+                            }
+                        ],
+                        "logging": [
+                            {}
+                        ],
+                        "object_lock_configuration": [],
+                        "replication_configuration": [],
+                        "server_side_encryption_configuration": [],
+                        "tags_all": {},
+                        "versioning": [
+                            {}
+                        ],
+                        "website": []
+                    }
+                },
+                {
+                    "address": "aws_s3_bucket.my_log_bucket",
+                    "mode": "managed",
+                    "type": "aws_s3_bucket",
+                    "name": "my_log_bucket",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "schema_version": 0,
+                    "values": {
+                        "acl": "private",
+                        "bucket": "my-unique-log-bucket",
+                        "force_destroy": false,
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "cors_rule": [],
+                        "grant": [],
+                        "lifecycle_rule": [],
+                        "logging": [],
+                        "object_lock_configuration": [],
+                        "replication_configuration": [],
+                        "server_side_encryption_configuration": [],
+                        "tags_all": {},
+                        "versioning": [],
+                        "website": []
+                    }
+                }
+            ]
+        }
+    },
+    "resource_changes": [
+        {
+            "address": "aws_s3_bucket.my_bucket",
+            "mode": "managed",
+            "type": "aws_s3_bucket",
+            "name": "my_bucket",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "acl": "public-read",
+                    "bucket": "my-public-bucket",
+                    "force_destroy": false,
+                    "lifecycle_rule": [
+                        {
+                            "abort_incomplete_multipart_upload_days": null,
+                            "enabled": false,
+                            "expiration": [],
+                            "id": "archive",
+                            "noncurrent_version_expiration": [],
+                            "noncurrent_version_transition": [],
+                            "prefix": null,
+                            "tags": null,
+                            "transition": [
+                                {
+                                    "date": "",
+                                    "days": 30,
+                                    "storage_class": "STANDARD_IA"
+                                },
+                                {
+                                    "date": "",
+                                    "days": 60,
+                                    "storage_class": "GLACIER"
+                                }
+                            ]
+                        }
+                    ],
+                    "logging": [
+                        {
+                            "target_bucket": "my-unique-log-bucket",
+                            "target_prefix": "log/"
+                        }
+                    ],
+                    "tags": null,
+                    "timeouts": null,
+                    "versioning": [
+                        {
+                            "enabled": true,
+                            "mfa_delete": false
+                        }
+                    ]
+                },
+                "after_unknown": {
+                    "acceleration_status": true,
+                    "arn": true,
+                    "bucket_domain_name": true,
+                    "bucket_prefix": true,
+                    "bucket_regional_domain_name": true,
+                    "cors_rule": true,
+                    "grant": true,
+                    "hosted_zone_id": true,
+                    "id": true,
+                    "lifecycle_rule": [
+                        {
+                            "expiration": [],
+                            "noncurrent_version_expiration": [],
+                            "noncurrent_version_transition": [],
+                            "transition": [
+                                {},
+                                {}
+                            ]
+                        }
+                    ],
+                    "logging": [
+                        {}
+                    ],
+                    "object_lock_configuration": true,
+                    "object_lock_enabled": true,
+                    "policy": true,
+                    "region": true,
+                    "replication_configuration": true,
+                    "request_payer": true,
+                    "server_side_encryption_configuration": true,
+                    "tags_all": true,
+                    "versioning": [
+                        {}
+                    ],
+                    "website": true,
+                    "website_domain": true,
+                    "website_endpoint": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "cors_rule": [],
+                    "grant": [],
+                    "lifecycle_rule": [
+                        {
+                            "expiration": [],
+                            "noncurrent_version_expiration": [],
+                            "noncurrent_version_transition": [],
+                            "transition": [
+                                {},
+                                {}
+                            ]
+                        }
+                    ],
+                    "logging": [
+                        {}
+                    ],
+                    "object_lock_configuration": [],
+                    "replication_configuration": [],
+                    "server_side_encryption_configuration": [],
+                    "tags_all": {},
+                    "versioning": [
+                        {}
+                    ],
+                    "website": []
+                }
+            }
+        },
+        {
+            "address": "aws_s3_bucket.my_log_bucket",
+            "mode": "managed",
+            "type": "aws_s3_bucket",
+            "name": "my_log_bucket",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+                "actions": [
+                    "create"
+                ],
+                "before": null,
+                "after": {
+                    "acl": "private",
+                    "bucket": "my-unique-log-bucket",
+                    "force_destroy": false,
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "acceleration_status": true,
+                    "arn": true,
+                    "bucket_domain_name": true,
+                    "bucket_prefix": true,
+                    "bucket_regional_domain_name": true,
+                    "cors_rule": true,
+                    "grant": true,
+                    "hosted_zone_id": true,
+                    "id": true,
+                    "lifecycle_rule": true,
+                    "logging": true,
+                    "object_lock_configuration": true,
+                    "object_lock_enabled": true,
+                    "policy": true,
+                    "region": true,
+                    "replication_configuration": true,
+                    "request_payer": true,
+                    "server_side_encryption_configuration": true,
+                    "tags_all": true,
+                    "versioning": true,
+                    "website": true,
+                    "website_domain": true,
+                    "website_endpoint": true
+                },
+                "before_sensitive": false,
+                "after_sensitive": {
+                    "cors_rule": [],
+                    "grant": [],
+                    "lifecycle_rule": [],
+                    "logging": [],
+                    "object_lock_configuration": [],
+                    "replication_configuration": [],
+                    "server_side_encryption_configuration": [],
+                    "tags_all": {},
+                    "versioning": [],
+                    "website": []
+                }
+            }
+        }
+    ],
+    "configuration": {
+        "provider_config": {
+            "aws": {
+                "name": "aws",
+                "full_name": "registry.terraform.io/hashicorp/aws",
+                "expressions": {
+                    "region": {
+                        "constant_value": "us-east-1"
+                    }
+                }
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "aws_s3_bucket.my_bucket",
+                    "mode": "managed",
+                    "type": "aws_s3_bucket",
+                    "name": "my_bucket",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "acl": {
+                            "constant_value": "public-read"
+                        },
+                        "bucket": {
+                            "constant_value": "my-public-bucket"
+                        },
+                        "lifecycle_rule": [
+                            {
+                                "enabled": {
+                                    "constant_value": false
+                                },
+                                "id": {
+                                    "constant_value": "archive"
+                                },
+                                "transition": [
+                                    {
+                                        "days": {
+                                            "constant_value": 30
+                                        },
+                                        "storage_class": {
+                                            "constant_value": "STANDARD_IA"
+                                        }
+                                    },
+                                    {
+                                        "days": {
+                                            "constant_value": 60
+                                        },
+                                        "storage_class": {
+                                            "constant_value": "GLACIER"
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "logging": [
+                            {
+                                "target_bucket": {
+                                    "constant_value": "my-unique-log-bucket"
+                                },
+                                "target_prefix": {
+                                    "constant_value": "log/"
+                                }
+                            }
+                        ],
+                        "versioning": [
+                            {
+                                "enabled": {
+                                    "constant_value": true
+                                }
+                            }
+                        ]
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "aws_s3_bucket.my_log_bucket",
+                    "mode": "managed",
+                    "type": "aws_s3_bucket",
+                    "name": "my_log_bucket",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                        "acl": {
+                            "constant_value": "private"
+                        },
+                        "bucket": {
+                            "constant_value": "my-unique-log-bucket"
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ]
+        }
+    },
+    "timestamp": "2024-10-25T09:32:20Z",
+    "applyable": true,
+    "complete": true,
+    "errored": false
+}
