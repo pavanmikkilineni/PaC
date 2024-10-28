@@ -36,6 +36,33 @@ resource "aws_s3_bucket" "my_log_bucket" {
   acl    = "private"
 }
 
+# resource "aws_s3_bucket" "example" {
+#   bucket = "my-tf-test-bucket"
+# }
+
+# resource "aws_s3_bucket_policy" "allow_access_to_ssl_requests_only" {
+#   bucket = aws_s3_bucket.example.id
+#   policy = data.aws_iam_policy_document.allow_access_to_ssl_requests_only.json
+# }
+
+# data "aws_iam_policy_document" "allow_access_to_ssl_requests_only" {
+#   statement {
+#     principals {
+#       type        = "AWS"
+#       identifiers = ["123456789012"]
+#     }
+
+#     actions = [
+#       "s3:GetObject",
+#       "s3:ListBucket",
+#     ]
+
+#     resources = [
+#       aws_s3_bucket.example.arn,
+#       "${aws_s3_bucket.example.arn}/*",
+#     ]
+#   }
+# }
 
 # resource "aws_s3_bucket_policy" "example_policy" {
 #   bucket = aws_s3_bucket.example.arn

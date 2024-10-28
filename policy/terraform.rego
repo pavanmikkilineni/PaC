@@ -8,7 +8,7 @@ aws_s3_bucket_public_readable(resource) if {
 
 deny contains msg if {
 	resource := input.resource_changes[_]
-
+    resource.type == "aws_s3_bucket"
 	aws_s3_bucket_public_readable(resource)
 
 	msg := {
@@ -29,7 +29,7 @@ aws_s3_bucket_logging_disaled(resource) if {
 
 deny contains msg if {
 	resource := input.resource_changes[_]
-
+    resource.type == "aws_s3_bucket"
 	aws_s3_bucket_logging_disaled(resource)
 
 	msg := {
@@ -54,7 +54,7 @@ aws_s3_bucket_version_lifecycle_policy_check(resource) if {
 
 deny contains msg if {
 	resource := input.resource_changes[_]
-
+	resource.type == "aws_s3_bucket"
 	aws_s3_bucket_version_lifecycle_policy_check(resource)
 
 	msg := {
@@ -79,7 +79,7 @@ aws_s3_bucket_lifecycle_policy_check(resource) if {
 
 deny contains msg if {
 	resource := input.resource_changes[_]
-
+    resource.type == "aws_s3_bucket"
 	aws_s3_bucket_lifecycle_policy_check(resource)
 
 	msg := {
@@ -93,6 +93,33 @@ deny contains msg if {
 		"references": [],
 	}
 }
+
+
+# # Allow only if all S3 bucket policies enforce SSL/TLS
+# deny contains msg if {
+
+#     resource := input.resource[_]
+#     resource_type := resource.aws_s3_bucket_policy
+#     policy := resource_type[_].policy
+
+#     # Convert policy from JSON string to Rego object
+    
+
+#     # Check if "Statement" includes the required SSL condition
+#     not ssl_condition_present(policy_json.Statement)
+
+#     # Prepare a message with bucket identifier (ID or ARN)
+#     bucket_name := resource_type[_].bucket
+#     msg := sprintf("Bucket '%s' does not enforce SSL/TLS in its policy.", [bucket_name])
+# }
+
+# # Helper rule to check if an SSL condition is present in statements
+# ssl_condition_present(statements) if {
+#     some i
+#     statements[i].Effect == "Deny"
+#     statements[i].Condition.Bool["aws:SecureTransport"] == "false"
+# }
+
 
 
 
