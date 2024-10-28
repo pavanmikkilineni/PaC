@@ -12,7 +12,8 @@ deny contains msg if {
 	aws_s3_bucket_public_readable(resource)
 
 	msg := {
-		"publicId": "AWS-AS3-01.04",
+		"EISAId" : "EISA-OPS-106"
+		"RecommendationId": "AWS-AS3-01.04",
 		"title": "S3 Bucket is publicly readable",
 		"severity": "medium",
 		"msg": sprintf("Bucket Name: [%s]:", [resource.name]),
@@ -33,6 +34,7 @@ deny contains msg if {
 	aws_s3_bucket_logging_disaled(resource)
 
 	msg := {
+		"EISAId" : "EISA-OPS-401"
 		"publicId": "AWS-AS3-01.12",
 		"title": "S3 server access logging is disabled",
 		"severity": "Medium",
@@ -58,6 +60,7 @@ deny contains msg if {
 	aws_s3_bucket_version_lifecycle_policy_check(resource)
 
 	msg := {
+		"EISAId" : "EISA-OPS-401"
 		"publicId": "AWS-AS3-01.09",
 		"title": "S3 general purpose versioned bucket Lifecycle configuration disabled",
 		"severity": "Medium",
@@ -83,6 +86,7 @@ deny contains msg if {
 	aws_s3_bucket_lifecycle_policy_check(resource)
 
 	msg := {
+		"EISAId" : "EISA-OPS-401"
 		"publicId": "AWS-AS3-01.09",
 		"title": "S3 general purpose bucket Lifecycle configuration disabled",
 		"severity": "Low",
